@@ -14,9 +14,11 @@ pipeline {
             }
         }
 
-        stage('Start') {
+        stage('Start App') {
             steps {
-                sh 'npm start'
+                sh '''
+                    nohup npm start > output.log 2>&1 &
+                '''
             }
         }
     }
