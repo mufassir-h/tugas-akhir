@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp-green
+  template:
+    metadata:
+      labels:
+        app: myapp-green
+    spec:
+      containers:
+        - name: myapp
+          image: docker.io/username/myapp:latest
+          ports:
+            - containerPort: 3000

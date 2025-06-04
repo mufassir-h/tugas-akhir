@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp-blue
+  template:
+    metadata:
+      labels:
+        app: myapp-blue
+    spec:
+      containers:
+        - name: myapp
+          image: docker.io/username/myapp:latest
+          ports:
+            - containerPort: 3000
