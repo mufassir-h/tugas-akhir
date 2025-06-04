@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE = 'app'
+        IMAGE = 'tugas-akhir-app'
         TAG = 'latest' // atau pakai versi atau BUILD_NUMBER
         REGISTRY = 'docker.io/mufassirrafi' // contoh: docker.io/johndoe
     }
